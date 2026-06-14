@@ -1,6 +1,10 @@
-from filtros import filtrar_continente, filtrar_poblacion, filtrar_superficie
+from .filtros import (
+    filtrar_continente,
+    filtrar_poblacion,
+    filtrar_superficie
+)
 
-def menu_filtrar(lista_paises):
+def menu_filtros(lista_paises):
     """
     Permite al usuario elegir un filtro y utiliza
     la función correspondiente de filtros
