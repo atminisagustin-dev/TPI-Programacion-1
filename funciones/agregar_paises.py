@@ -17,10 +17,21 @@ def agregar_paises(nombre_archivo, lista_paises):
     for i in range(cantidad_paises):
         print(f"Pais {i+1}/{cantidad_paises}:")
         while True:
-            nombre = input("Ingrese Nombre: ").strip()
-            if nombre:
-                break
-            print("Error: El nombre no puede estar vacío.")
+            nombre = input("Ingrese Nombre: ").lower().strip()
+            
+            # Verificamos si está vacío
+            if not nombre:
+                print("Error: El nombre no puede estar vacío.")
+                continue
+                
+            # Verificamos si ya existe en la lista (comparando nombres)
+            # any() es una forma eficiente de buscar en una lista
+            existe = any(pais["nombre"].lower() == nombre for pais in lista_paises)
+            
+            if existe:
+                print(f"Error: El país '{nombre}' ya se encuentra en la base de datos.")
+            else:
+                break # El nombre es válido y no existe, salimos del while
         
         # Inicializamos un ciclo while para validar entradas del usuario
         while True:
@@ -44,21 +55,8 @@ def agregar_paises(nombre_archivo, lista_paises):
         # Agregamos a la lista el diccionario
         nuevos_paises.append(pais)
 
-    # Abrimos el bloque with para trabajar con el archivo .csv
-    with open(nombre_archivo, "a", newline='', encoding='utf-8') as archivo:
-
-        # Establecemos el orden con el que se debe agregar los elementos
-        campos = ["nombre", "poblacion", "superficie", "continente"]
-
-        # Creamos el objeto escritor
-        writer = csv.DictWriter(archivo, fieldnames=campos)
-
-        # Agregamos a lista de diccionarios
-        writer.writerows(nuevos_paises)
-
     # Actualizar la lista en memoria
     lista_paises.extend(nuevos_paises)
-    print(f"\n¡{cantidad_paises} países añadidos exitosamente!")
 
     # Informamos al usuario el exito de la operación
     print(f"\n¡Se han añadido {cantidad_paises} países exitosamente al archivo '{nombre_archivo}'!")

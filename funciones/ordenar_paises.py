@@ -26,11 +26,12 @@ def ordenar_paises(lista_paises):
 
     # Utilizamos sort() para ordenar la lista, y una función lambda para acceder al campo elegido
     # Utilizamos la variable booleana reverse para corregir el orden ya sea ascendente o descendente
-    lista_paises.sort(key=lambda x: x[clave_orden], reverse=not reverse)
+    # Esto no modifica la lista original
+    lista_temporal = sorted(lista_paises, key=lambda x: x[clave_orden], reverse=not reverse)
 
     # Imprimimos por pantalla el siguiente mensaje
     print(f"\nResultados ordenados por {clave_orden}:")
 
     # Recorremos la lista e imprimimos por pantalla los resultados 
-    for p in lista_paises:
-        print(f"{p['nombre']} | Pob: {p['poblacion']} | Sup: {p['superficie']} km² | Cont: {p['continente']}")
+    for p in lista_temporal:
+        print(f"{p['nombre']:<15} | Pob: {p['poblacion']:<10} | Sup: {p['superficie']:<10} km² | Cont: {p['continente']}")
