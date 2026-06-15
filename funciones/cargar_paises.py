@@ -6,7 +6,7 @@ def cargar_paises(nombre_archivo):
     Cada diccionario contiene un pais y sus datos de
     población, superficie y continente
     """
-
+    # Crea una lista vacia donde se almacenaran los diccionarios
     lista_paises = []
 
     try:
@@ -14,6 +14,7 @@ def cargar_paises(nombre_archivo):
             lector = csv.DictReader(archivo)
 
             for fila in lector:
+                # Recorre las filas del dataser y convierte los valores en values de un diccionario
                 try:
                     pais = {
                         "nombre": fila["nombre"].strip(),

@@ -38,8 +38,8 @@ def mostrar_estadisticas(lista_paises):
 
     print(f"  Total de países cargados : {len(lista_paises)}")
     print()
-    print(f"  País con mayor población : {mayor_pob['nombre']} ({mayor_pob['poblacion']} hab.)")
-    print(f"  País con MENOR población : {menor_pob['nombre']} ({menor_pob['poblacion']} hab.)")
+    print(f"  País con mayor población : {mayor_pob['nombre'].title()} - ({mayor_pob['poblacion']} hab.)")
+    print(f"  País con MENOR población : {menor_pob['nombre'].title()} - ({menor_pob['poblacion']} hab.)")
     print(f"  Promedio de población    : {promedio_pob} hab.")
     print()
     print(f"  Promedio de superficie   : {promedio_sup} km²")
@@ -47,4 +47,4 @@ def mostrar_estadisticas(lista_paises):
 
     print("  Países por continente:")
     for continente in sorted(conteo):
-        print(f"    {continente} : {conteo[continente]} paises")
+        print(f"    {continente.title()} : {conteo[continente]} paises")

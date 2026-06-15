@@ -1,6 +1,9 @@
 import csv
 
-def agregar_paises(nombre_archivo, lista_paises):
+def agregar_paises(lista_paises):
+    """
+    Permite agregar paises a la lista de paises
+    """
 
     # Abrimos un bloque Try para validar entradas
     try:
@@ -59,4 +62,4 @@ def agregar_paises(nombre_archivo, lista_paises):
     lista_paises.extend(nuevos_paises)
 
     # Informamos al usuario el exito de la operación
-    print(f"\n¡Se han añadido {cantidad_paises} países exitosamente al archivo '{nombre_archivo}'!")
+    print(f"\n¡Se han añadido {cantidad_paises} países exitosamente!")

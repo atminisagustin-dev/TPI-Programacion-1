@@ -3,7 +3,7 @@ def menu_principal():
     Muestra el menu de opciones principal
     """
     print("=" * 50)
-    print("GESTOR DE DATOS DE PAISES")
+    print("-" * 10,"GESTOR DE DATOS DE PAISES","-" * 13)
     print("=" * 50)
     print("1- Agregar paises")
     print("2- Actualizar los datos de Población/Superficie")

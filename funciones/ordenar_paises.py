@@ -1,11 +1,17 @@
 def ordenar_paises(lista_paises):
-
+    """
+    Permite ordenar los paises de la lista bajo
+    los siguientes criterios:
+    - Nombre (ascendente/descendente)
+    - Población (ascendente/descendente)
+    - Superficie (ascendente/descendente)
+    """
     # Pedimos al usuario una opción
-    opcion = input("""\n¿Porque Campo desea ordenar?
-                1) Nombre
-                2) Población
-                3) Superficie
-                    Seleccione una Opción (1-3): """)
+    opcion = input("\n¿Por que campo desea ordenar?\n" \
+                   "1) Nombre\n" \
+                   "2) Población\n" \
+                   "3) Superficie\n" \
+                   "Seleccione una Opción (1-3): ")
     
     # Creamos un diccionario para luego acceder al campo elegido
     campos = {"1": "nombre", "2": "poblacion", "3": "superficie"}
@@ -24,7 +30,7 @@ def ordenar_paises(lista_paises):
     # Creamos una variable con un valor booleano
     reverse = True if orden == "s" else False
 
-    # Utilizamos sort() para ordenar la lista, y una función lambda para acceder al campo elegido
+    # Utilizamos sorted() para crear una lista ordenada, y una función lambda para acceder al campo elegido
     # Utilizamos la variable booleana reverse para corregir el orden ya sea ascendente o descendente
     # Esto no modifica la lista original
     lista_temporal = sorted(lista_paises, key=lambda x: x[clave_orden], reverse=not reverse)
@@ -34,4 +40,4 @@ def ordenar_paises(lista_paises):
 
     # Recorremos la lista e imprimimos por pantalla los resultados 
     for p in lista_temporal:
-        print(f"{p['nombre']:<15} | Pob: {p['poblacion']:<10} | Sup: {p['superficie']:<10} km² | Cont: {p['continente']}")
+        print(f"{p['nombre'].title():<15} | Pob: {p['poblacion']:<10} | Sup: {p['superficie']:<10} km² | Cont: {p['continente'].title()}")

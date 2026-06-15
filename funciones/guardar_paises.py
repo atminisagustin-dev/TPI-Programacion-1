@@ -1,6 +1,9 @@
 import csv
 
 def guardar_paises(nombre_archivo, lista_paises):
+    """
+    Guarda los paises de la lista en el archivo .csv
+    """
     with open(nombre_archivo, mode="w", encoding='utf-8', newline="") as archivo:
 
         # Establecemos el orden con el que se debe agregar los elementos

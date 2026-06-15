@@ -1,4 +1,9 @@
 def buscar_pais(lista_paises):
+    """
+    Permite buscar un pais por su nombre.
+    Considera coincidencias parciales y
+    muestra los datos de las coincidencias.
+    """
 
     # Pedimos al usuario el nombre del pais a buscar
     buscado = input("Ingrese el nombre del pais a buscar: ").lower().strip()

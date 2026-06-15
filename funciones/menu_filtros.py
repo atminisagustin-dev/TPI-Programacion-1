@@ -9,7 +9,7 @@ def menu_filtros(lista_paises):
     Permite al usuario elegir un filtro y utiliza
     la función correspondiente de filtros
     """
-    print("¿Con qué criterio desea filtrar?\n1-Continente\n2-Población\n3-Superficie")
+    print("¿Con qué criterio desea filtrar?\n1- Continente\n2- Población\n3- Superficie")
 
     while True:
         try:
@@ -19,8 +19,9 @@ def menu_filtros(lista_paises):
             continue
 
         match opcion:
+            # Utilizamos match case para las opciones y llamamos a las funciones de filtros.py
             case 1:
-                continentes = sorted({p["continente"] for p in lista_paises})
+                continentes = sorted({p["continente"].title() for p in lista_paises})
                 print("Continentes disponibles:", ", ".join(continentes))
                 continente = input("Ingrese el continente: ")
                 resultado = filtrar_continente(lista_paises, continente)
@@ -46,10 +47,10 @@ def menu_filtros(lista_paises):
                 print("Opción fuera de rango.")
                 continue
 
-        # Mostrar resultado
+        # Mostramos el resultado
         if resultado:
             for pais in resultado:
-                print(f"- {pais['nombre']}")
+                print(f"- {pais['nombre'].title()}")
         else:
             print("No se encontraron países con ese criterio.")
         break
