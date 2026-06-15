@@ -1,27 +1,5 @@
-import csv
+def ordenar_paises(lista_paises):
 
-# Creamos la lista para mostrar resultados
-lista_paises = []
-
-def ordenar_paises(nombre_archivo):
-
-    # Intentamos abrir el archivo .csv
-    try:
-        # Abrimos en solo lectura
-        with open(nombre_archivo, "r", encoding="utf-8") as archivo:
-            reader = csv.DictReader(archivo)
-
-            for fila in reader:
-                # Convertimos los valores a numericos para que el orden sea el correcto
-                fila['poblacion'] = int(fila['poblacion'])
-                fila['superficie'] = int(fila['superficie'])
-                lista_paises.append(fila)
-
-    # Salimos si no hay archivo .csv
-    except FileNotFoundError:
-        print("Error: El archivo no esiste.")
-        return
-    
     # Pedimos al usuario una opción
     opcion = input("""\n¿Porque Campo desea ordenar?
                 1) Nombre
@@ -41,7 +19,7 @@ def ordenar_paises(nombre_archivo):
     clave_orden = campos[opcion]
 
     # Pedimos al usuario que ingrese el orden en el que desea ordenar los campos
-    orden = input("¿Orden Ascendente? s/n").lower().strip()
+    orden = input("¿Orden Ascendente? s/n: ").lower().strip()
 
     # Creamos una variable con un valor booleano
     reverse = True if orden == "s" else False

@@ -1,6 +1,4 @@
-import csv
-
-def buscar_pais(nombre_archivo):
+def buscar_pais(lista_paises):
 
     # Pedimos al usuario el nombre del pais a buscar
     buscado = input("Ingrese el nombre del pais a buscar: ").lower().strip()
@@ -8,25 +6,15 @@ def buscar_pais(nombre_archivo):
     # Inicializamos la siguiente variable bandera
     encontrado = False
 
-    # Validamos que exista el archivo .csv
-    try:
-        # Abrimos el archivo .csv para lectura
-        with open(nombre_archivo, "r", encoding="utf-8") as archivo:
+    
+    print(f"\nResultados para: '{buscado}'")
+    print("-" * 30)
 
-            # Converrtimos cada fila en un diccionario
-            reader = csv.DictReader(archivo)
+    for pais in lista_paises:
+        if buscado in pais["nombre"].lower():
+            print(f"Encontrado: {pais['nombre']} | Población: {pais['poblacion']}")
+            print(f"Superficie: {pais['superficie']} km² | Continente: {pais['continente']}")
+            encontrado = True
             
-            print(f"\nResultados para: '{buscado}'")
-            print("-" * 30)
-
-            for fila in reader:
-                if buscado in fila["nombre"].lower():
-                    print(f"Encontrado: {fila['nombre']} | Población: {fila['poblacion']}")
-                    print(f"Superficie: {fila['superficie']} km² | Continente: {fila['continente']}")
-                    encontrado = True
-            
-            if not encontrado:
-                print("No se encontraron países que coincidan con ese nombre.")
-
-    except FileNotFoundError:
-        print("Error: El archivo no existe.")
+    if not encontrado:
+        print("No se encontraron países que coincidan con ese nombre.")

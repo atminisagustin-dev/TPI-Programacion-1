@@ -31,7 +31,7 @@ while True:
     else:
         match opciones:
             case 1:
-                agregar_paises(lista_paises)
+                agregar_paises(ARCHIVO_CSV,lista_paises)
                 guardar_paises(ARCHIVO_CSV,lista_paises)
             case 2:
                 actualizar_pais(lista_paises)

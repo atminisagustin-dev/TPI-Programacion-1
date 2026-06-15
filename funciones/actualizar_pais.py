@@ -9,7 +9,7 @@ def actualizar_pais(lista_paises):
             print(f"{pais['nombre']} ha sido encontrado correctamente.")
 
             while True:
-                entrada = input(f"La población actual de {pais['nombre']} es {pais['poblacion']}. ¿Desea cambiarla? (Presione enter para no cambiar)")
+                entrada = input(f"La población actual de {pais['nombre']} es {pais['poblacion']}. ¿Desea cambiarla?(Presione enter para no cambiar) ")
                 # Preguntamos si se quiere cambiar la población y damos la opción de no cambiarla
                 if entrada == "":
                     break
@@ -25,7 +25,7 @@ def actualizar_pais(lista_paises):
                         print("Debe ingresar un numero mayor a cero")
             
             while True: 
-                entrada = input(f"La superficie actual de {pais['nombre']} es {pais['superficie']} km². ¿Desea cambiarla? (Presione enter para no cambiar)")
+                entrada = input(f"La superficie actual de {pais['nombre']} es {pais['superficie']} km². ¿Desea cambiarla?(Presione enter para no cambiar) ")
                 # Preguntamos si se quiere cambiar la superficie y damos la opción de no cambiarla
                 if entrada == "":
                     break
