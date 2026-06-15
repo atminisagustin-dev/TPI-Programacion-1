@@ -60,7 +60,6 @@ Los datos contemplan países de distintos continentes, con diversidad en:
 
 * Población
 * Superficie
-* Densidad poblacional
 
 ## Características
 
