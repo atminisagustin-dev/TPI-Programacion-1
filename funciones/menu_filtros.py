@@ -23,7 +23,14 @@ def menu_filtros(lista_paises):
             case 1:
                 continentes = sorted({p["continente"].title() for p in lista_paises})
                 print("Continentes disponibles:", ", ".join(continentes))
-                continente = input("Ingrese el continente: ")
+    
+                while True:
+                    continente = input("Ingrese el continente: ")
+                    if continente.strip() == "":
+                        print("Debe ingresar letras, no puede quedar vacío.")
+                    else:
+                        break
+    
                 resultado = filtrar_continente(lista_paises, continente)
 
             case 2 | 3:
