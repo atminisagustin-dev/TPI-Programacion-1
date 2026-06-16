@@ -8,7 +8,7 @@ def agregar_paises(lista_paises):
         # Pedimos al usuario la cantidad de paises a agregar
         cantidad_paises = int(input("Ingrese la cantidad de paises a agregar: "))
     except ValueError:
-        print("Error: Ingrese un Número valido: ")
+        print("Error: Ingrese un Número valido. ")
         return
     
     # Creamos una lista de diccionarios
