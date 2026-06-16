@@ -1,5 +1,3 @@
-import csv
-
 def agregar_paises(lista_paises):
     """
     Permite agregar paises a la lista de paises
